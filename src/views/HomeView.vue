@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { NButton } from 'naive-ui'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <n-button type="primary">按钮</n-button>
   </main>
 </template>
+
+<style scoped lang="scss"></style>
