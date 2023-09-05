@@ -7,26 +7,22 @@ import format from 'prettier-eslint';
 const { resolve } = path
 
 export default () => {
-    console.log('文件监听111')
     return {
         name: 'file-change',
         apply: 'serve',
         async configureServer(server) {
-            console.log('测试')
             const baseDirUrl = resolve(__dirname, '../src/directives')
             const watcher = chokidar.watch(baseDirUrl, {
                 interval: 500,
                 persistent: true
             })
             function handler(path, stats) {
-                console.log('文件监听222', 'path--', path, 'stats', stats)
+                console.log('watch files-', 'path-', path, 'stats', stats)
 
                 const exclude = ['index.js']
-                if (exclude.includes(path)) return
-                // 获取 directives 目录下除了index.js文件外的文件
 
                 fs.readdir(baseDirUrl, async (err, files) => {
-                    console.log('目录为--', files)
+                    console.log('catalogue--', files)
                     let importArr = []
                     let exportObj = []
                     files.forEach(file => {
@@ -44,7 +40,7 @@ export default () => {
                         })
                         
                         fs.writeFile(resolve(__dirname, '../src/directives/index.js'), data, err => {
-                            if (!err) console.log('写入成功')
+                            if (!err) console.log('write successfully')
                         })
                     } catch(e) {
                         console.log(e)
