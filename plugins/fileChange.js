@@ -43,11 +43,11 @@ export default () => {
                             semi: false, 
                         })
                         
-                        fs.writeFile(resolve(baseDirUrl, '/index.js'), data, err => {
+                        fs.writeFile(resolve(__dirname, '../src/directives/index.js'), data, err => {
                             if (!err) console.log('写入成功')
                         })
                     } catch(e) {
-                        console.log('格式化代码错误', e)
+                        console.log(e)
                     } 
                 })
 
