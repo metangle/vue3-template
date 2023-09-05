@@ -24,6 +24,7 @@
     "husky": "^8.0.0",
     "naive-ui": "^2.34.4",
     "prettier": "^3.0.0",
+    "prettier-eslint": "^15.0.1",
     "sass": "^1.66.1",
     "vite": "^4.4.9"
   }
