@@ -12,9 +12,4 @@ const i18n = createI18n({
   }
 })
 
-// export function t(key, args) {
-//   if (!i18n) return key
-//   return i18n.global.tc(key, args)
-// }
-
 export default i18n

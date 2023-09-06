@@ -6,7 +6,10 @@
 - [x] vue-router
 - [x] sass
 - [x] pinia
-- [ ] axios
+- [x] axios
 - [x] naive-ui
 - [x] reset.css
 - [x] internationalization
+- [x] multiple env(dev | prod)
+- [x] build config(debugger | console.log)
+- [x] code check and commit
