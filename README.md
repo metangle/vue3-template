@@ -13,3 +13,5 @@
 - [x] multiple env(dev | prod)
 - [x] build config(debugger | console.log)
 - [x] code check and commit
+- [ ] vitepress ?? components docs
+- [ ] package.json -> scripts serve/build command

@@ -1,6 +1,7 @@
 {
   "name": "vue3-template",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "zrg_dev@163.com",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -30,5 +31,9 @@
     "prettier-eslint": "^15.0.1",
     "sass": "^1.66.1",
     "vite": "^4.4.9"
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=9.5.1"
   }
 }
