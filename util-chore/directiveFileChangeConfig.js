@@ -27,7 +27,7 @@ const handler = (path, stats) => {
             })
             
             fs.writeFile(resolve(__dirname, '../src/directives/index.js'), data, err => {
-                if (!err) console.log('write successfully')
+                if (!err) console.log('directive-write successfully')
             })
         } catch(e) {
             console.log(e)
