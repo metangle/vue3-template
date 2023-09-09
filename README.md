@@ -14,3 +14,5 @@
 - [x] package.json -> scripts serve/build command
 - [ ] internationalization components
 - [ ] black | light theme
+
+Notice: to inherit theme of naive-ui, use variables of naive-ui, prohibit to use Native HTML tags, use n-el tag ??

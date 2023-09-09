@@ -54,7 +54,7 @@ const handleRequest = () => {
     </n-space>
     <n-space>
       <n-button @click="handleCommon">修改</n-button>
-      <n-button>年月日: {{ year }}-{{ month }}-{{ day }}</n-button>
+      <n-button>年月日 (year: persistedstate): {{ year }}-{{ month }}-{{ day }}</n-button>
     </n-space>
   </main>
 </template>
