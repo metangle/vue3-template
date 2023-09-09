@@ -5,15 +5,20 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "serve": "vite",
+    "start": "vite",
+    "build": "vite build --mode production",
+    "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@vueuse/core": "^10.4.1",
     "axios": "^1.5.0",
     "pinia": "^2.1.6",
+    "pinia-plugin-persistedstate": "^3.2.0",
     "reset-css": "^5.0.2",
     "vue": "^3.3.4",
     "vue-i18n": "^9.3.0",

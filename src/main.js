@@ -1,19 +1,22 @@
-// import 'reset-css'
+// import 'reset-css' // TODO 是否需要去掉
 import './assets/styles/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate'
 
 import App from './App.vue'
 import router from './router'
 import i18n from './locales'
 import directives from './directives'
 
+const pinia = createPinia()
 const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
 app.use(i18n)
+pinia.use(piniaPluginPersistedState)
+app.use(pinia)
+app.use(router)
 
 for (let key of Object.keys(directives)) {
   app.directive(key, directives[key])
