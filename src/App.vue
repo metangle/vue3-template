@@ -2,20 +2,26 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { NConfigProvider, zhCN, enUS, dateZhCN, dateEnUS, NButton } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
-import { computed, ref, reactive } from 'vue'
+import { computed } from 'vue'
 
+import { useCommonStore } from './store'
+
+const common = useCommonStore()
+
+const { setLocal } = common
 const { locale, t } = useI18n()
-
+locale.value = common.lang
 const changeLanguage = () => {
   try {
     console.log('test-t-nav.Home===', t('nav.Home'))
     locale.value = locale.value === 'en' ? 'zh' : 'en'
+    setLocal(locale.value)
   } catch (e) {
     console.error('[changeLanguage error]: ', e)
   }
 }
 
-const componentLang = computed(() => {
+const componentsLang = computed(() => {
   return locale.value === 'en'
     ? {
         locale: enUS,
@@ -29,7 +35,7 @@ const componentLang = computed(() => {
 </script>
 
 <template>
-  <n-config-provider :locale="componentLang.locale" :date-locale="componentLang.dateLocal">
+  <n-config-provider :locale="componentsLang.locale" :date-locale="componentsLang.dateLocal">
     <header>
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
       <div>
