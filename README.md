@@ -12,7 +12,8 @@
 - [x] build config(debugger | console.log)
 - [x] code check and commit
 - [x] package.json -> scripts serve/build command
-- [ ] internationalization components
+- [x] internationalization components
 - [ ] black | light theme
+- [ ] integrate search ai [spark ai]
 
 Notice: to inherit theme of naive-ui, use variables of naive-ui, prohibit to use Native HTML tags, use n-el tag ??

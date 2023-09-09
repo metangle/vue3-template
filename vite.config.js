@@ -40,6 +40,13 @@ export default defineConfig(({ mode, command, ssrBuild }) => {
       outDir: 'dist', // 打包输出目录
       assetsDir: 'assets', // 静态资源目录
       assetsInlineLimit: 4096, // 在这个大小以下的文件将会被编译成 base64，减少请求数量
+      minify: 'terser',
+      terserOptions: {
+          compress: {
+              drop_console: isProd,
+              drop_debugger: isProd,
+          }
+      },
       rollupOptions: {
         // external: ['vue', 'vue-router', 'axios'],
         external: [],
