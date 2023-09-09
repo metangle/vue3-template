@@ -6,12 +6,12 @@ import format from 'prettier-eslint';
 const baseDirUrl = resolve(__dirname, '../src/directives')
 
 const handler = (path, stats) => {
-    console.log('watch files-', 'path-', path, 'stats', stats)
+    console.log('directive-watch files-', 'path-', path, 'stats', stats)
 
     fs.readdir(baseDirUrl, async (err, files) => {
         console.log('catalogue--', files)
-        let importArr = []
-        let exportObj = []
+        const importArr = []
+        const exportObj = []
         files.forEach(file => {
             if (file !== 'index.js' && file.endsWith('.js')) {
                 const str = file.replace('\.js', '')
@@ -21,7 +21,7 @@ const handler = (path, stats) => {
         })
 
         try {
-            let data = await format({
+            const data = await format({
                 text: importArr.join('\n') + '\n\n' + 'export default {\n' +exportObj.join(',\n') + '\n}',
                 semi: false, 
             })

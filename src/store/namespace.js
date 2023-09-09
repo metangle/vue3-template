@@ -1,4 +1,1 @@
-export const Names = {
-  common: 'common',
-  user: 'user'
-}
+export const Names = { common: 'common', user: 'user' }
