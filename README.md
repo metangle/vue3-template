@@ -8,6 +8,7 @@
 - [x] pinia
 - [x] axios
 - [x] naive-ui
+- [ ] history mode
 - [x] multiple env(dev | prod)
 - [x] build config(debugger | console.log)
 - [x] code check and commit

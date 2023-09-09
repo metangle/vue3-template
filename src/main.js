@@ -1,4 +1,3 @@
-// import 'reset-css' // TODO 是否需要去掉
 import './assets/styles/main.scss'
 
 import { createApp } from 'vue'
