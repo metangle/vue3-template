@@ -18,7 +18,7 @@ export default defineStore(Names.local, {
             lang: 'en',
             label: t('local.zh'),
             locale: enUS,
-            dateLocal: dateEnUS,
+            dateLocal: dateEnUS
           }
         : {
             lang: 'zh',
