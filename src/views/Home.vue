@@ -1,6 +1,6 @@
 <script setup name="home">
 import { ref, computed, onActivated } from 'vue'
-import { NButton, NInput, NSpace, NEl, NCard } from 'naive-ui'
+import { NButton, NInput, NSpace, NEl, NCard, useMessage } from 'naive-ui'
 import { get } from '@/api/request.js'
 
 import { RouterLink, RouterView } from 'vue-router'
@@ -11,6 +11,7 @@ let inputVal = ref('')
 
 const user = useUserStore()
 const common = useCommonStore()
+const message = useMessage()
 
 const { userInfo, setUserInfo } = user
 const { setYear, setMonth, setDay } = common
@@ -32,8 +33,8 @@ const handleRequest = () => {
     .then((res) => {
       console.log(res)
     })
-    .catch((error) => {
-      console.log(error)
+    .catch(e => {
+      message.warning(e.message)
     })
 }
 
