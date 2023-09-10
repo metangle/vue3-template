@@ -40,11 +40,11 @@ const handleRequest = () => {
 </script>
 
 <template>
-  <main>
-    <n-space>
+  <n-space vertical>
+    <n-space vertical>
       <n-button type="primary" @click="handleRequest()">点击请求</n-button>
       <n-input v-model="inputVal" />
-      <input type="text" v-focus />
+      <n-space> 指令：<input type="text" v-focus /> </n-space>
     </n-space>
     <n-space>
       <n-button @click="handleUserInfo">修改</n-button>
@@ -53,10 +53,10 @@ const handleRequest = () => {
       <n-button>是否登录: {{ isLogged }}</n-button>
     </n-space>
     <n-space>
-      <n-button @click="handleCommon">修改</n-button>
-      <n-button>年月日 (year: persistedstate): {{ year }}-{{ month }}-{{ day }}</n-button>
+      <n-button @click="handleCommon">修改(year: 持久化)</n-button>
+      <n-button>年月日 : {{ year }}-{{ month }}-{{ day }}</n-button>
     </n-space>
-  </main>
+  </n-space>
 </template>
 
 <style scoped lang="scss"></style>

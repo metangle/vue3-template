@@ -1,4 +1,8 @@
 {
+  "title": {
+    "home": "Home",
+    "about": "About"
+  },
   "local": {
     "en": "English",
     "zh": "Chinese"
@@ -7,8 +11,5 @@
     "dark": "Dark",
     "light": "Light"
   },
-  "nav": {
-    "Home": "HOME",
-    "About": "ABOUT"
-  }
+  "nav": {}
 }

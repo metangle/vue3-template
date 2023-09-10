@@ -5,8 +5,6 @@ import i18n from '@/locales'
 
 const { locale, t } = i18n.global
 
-console.log('locale', locale.value)
-
 export default defineStore(Names.local, {
   state: () => {
     return {
@@ -34,10 +32,18 @@ export default defineStore(Names.local, {
     setLocal(value) {
       this.local = value
     },
+    setRouteName(value) {
+      this.currentRouteName = value
+    },
+    setPageTitle(value) {
+      document.title = value
+    },
     changeLanguage() {
       try {
-        console.log('test-t-nav.Home===', t('nav.Home'))
+        console.log('test-t-title.Home===', t('title.home'))
         locale.value = locale.value === 'en' ? 'zh' : 'en'
+
+        this.setPageTitle(t(`title.${this.currentRouteName}`))
         this.setLocal(locale.value)
       } catch (e) {
         console.error('[changeLanguage error]: ', e)

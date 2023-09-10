@@ -14,7 +14,7 @@
 - [x] code check and commit
 - [x] package.json -> scripts serve/build command
 - [x] internationalization components
-- [ ] black | light theme
+- [x] black | light theme
 - [ ] integrate search ai [spark ai]
 
 Notice: to inherit theme of naive-ui, use variables of naive-ui, prohibit to use Native HTML tags, use n-el tag ??
