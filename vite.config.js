@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 import watchFile from './plugins/watchFile'
 import directiveFileChangeConfig from './chore/directiveFileChangeConfig'
@@ -15,6 +16,7 @@ export default defineConfig(({ mode, command, ssrBuild }) => {
   return {
     plugins: [
       vue(),
+      vueSetupExtend(),
       watchFile(directiveFileChangeConfig.baseDirUrl, directiveFileChangeConfig.handler),
       watchFile(storeFileChangeConfig.baseDirUrl, storeFileChangeConfig.handler),
     ],

@@ -16,5 +16,7 @@
 - [x] internationalization components
 - [x] black | light theme
 - [ ] integrate search ai [spark ai]
+- [ ] keep-alive scroll to 0 ??
+- [ ] page animation
 
 Notice: to inherit theme of naive-ui, use variables of naive-ui, prohibit to use Native HTML tags, use n-el tag ??

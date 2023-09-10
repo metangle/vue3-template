@@ -1,7 +1,9 @@
+import { nextTick } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createDiscreteApi } from 'naive-ui'
 import i18n from '@/locales'
 import { useLocalStore } from '@/store'
+// import { scrollPage } from '@/util'
 
 const { t } = i18n.global
 
@@ -12,16 +14,31 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('../views/HomeView.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      name: 'index',
+      component: () => import('../views/Site.vue'),
+      meta: {},
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: () => import('../views/HomeView.vue'),
+          meta: {},
+          children: [
+            {
+              path: 'test',
+              name: 'test',
+              component: () => import('../views/Test.vue'),
+              meta: {}
+            }
+          ]
+        },
+        {
+          path: 'about',
+          name: 'about',
+          component: () => import('../views/AboutView.vue'),
+          meta: {}
+        }
+      ]
     }
   ]
 })
@@ -45,7 +62,11 @@ router.afterEach(function (to, from) {
     if (to.hash && to.hash !== from.hash) {
       nextTick(() => {
         const el = document.querySelector(to.hash)
-        if (el) el.scrollIntoView()
+        // if (el) el.scrollIntoView()
+      })
+    } else if (!to?.meta?.keepAlive) {
+      nextTick(() => {
+        // scrollPage(0)
       })
     }
 
@@ -56,6 +77,10 @@ router.afterEach(function (to, from) {
       //   // defined in index.html
       //   // window.deriveTitleFromLocale(useLocaleName().value)
       // }
+    })
+  } else if (!to?.meta?.keepAlive) {
+    nextTick(() => {
+      // scrollPage(0) // FIXME: 首页刷新后滚动条在最底部
     })
   }
 })

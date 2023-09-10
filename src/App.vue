@@ -1,14 +1,13 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import Site from './views/Site.vue'
+// import Site from './views/Site.vue'
 import {
-  NButton,
-  NSpace,
   NConfigProvider,
   NDialogProvider,
   NMessageProvider,
   NNotificationProvider,
-  NLayout
+  NLayout,
+  NScrollbar,
+  NEl
 } from 'naive-ui'
 
 import { useLocalStore, useThemeStore } from '@/store'
@@ -16,9 +15,6 @@ import { computed } from 'vue'
 
 const localStore = useLocalStore()
 const themeStore = useThemeStore()
-
-const { changeLanguage } = localStore
-const { changeTheme } = themeStore
 
 const currentLang = computed(() => localStore.currentLang)
 const currentTheme = computed(() => themeStore.currentTheme)
@@ -35,19 +31,9 @@ const currentTheme = computed(() => themeStore.currentTheme)
       <n-notification-provider>
         <n-dialog-provider>
           <n-layout>
-            <n-space vertical>
-              <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-              <n-space>
-                <n-button @click="changeLanguage">{{ currentLang.label }}</n-button>
-                <n-button @click="changeTheme">{{ currentTheme.label }}</n-button>
-              </n-space>
-
-              <n-space>
-                <RouterLink to="/">{{ $t(`title.home`) }}</RouterLink>
-                <RouterLink to="/about">{{ $t(`title.about`) }}</RouterLink>
-              </n-space>
-            </n-space>
-            <site />
+            <n-scrollbar style="max-height: 100vh">
+              <router-view />
+            </n-scrollbar>
           </n-layout>
         </n-dialog-provider>
       </n-notification-provider>

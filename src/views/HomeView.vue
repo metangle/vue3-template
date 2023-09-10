@@ -1,7 +1,9 @@
-<script setup>
+<script setup name="home">
 import { ref, computed } from 'vue'
-import { NButton, NInput, NSpace } from 'naive-ui'
+import { NButton, NInput, NSpace, NEl } from 'naive-ui'
 import { get } from '@/api/request.js'
+
+import { RouterLink, RouterView } from 'vue-router'
 
 import { useUserStore, useCommonStore } from '../store'
 
@@ -40,6 +42,7 @@ const handleRequest = () => {
 </script>
 
 <template>
+  <div>这里是Home页面</div>
   <n-space vertical>
     <n-space vertical>
       <n-button type="primary" @click="handleRequest()">点击请求</n-button>
@@ -57,6 +60,13 @@ const handleRequest = () => {
       <n-button>年月日 : {{ year }}-{{ month }}-{{ day }}</n-button>
     </n-space>
   </n-space>
+
+  <router-link to="/test">点我去Home的子页面</router-link>
+  <router-view v-slot="{ Component }">
+    <transition name="router_animate">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style scoped lang="scss"></style>
