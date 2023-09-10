@@ -5,6 +5,7 @@ const useCommonStore = defineStore(Names.common, {
   state: () => {
     return {
       lang: 'en',
+      theme: 'light',
       year: 2023,
       month: 5,
       day: 12
@@ -13,6 +14,9 @@ const useCommonStore = defineStore(Names.common, {
   actions: {
     setLocal(value) {
       this.lang = value
+    },
+    setTheme(value) {
+      this.theme = value
     },
     setYear(value) {
       this.year = value
@@ -26,7 +30,7 @@ const useCommonStore = defineStore(Names.common, {
   },
   persist: [
     {
-      paths: ['lang'],
+      paths: ['lang', 'theme'],
       key: () => ['local'],
       storage: localStorage
     },

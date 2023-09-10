@@ -1,4 +1,6 @@
 import useCommonStore from './modules/common'
+import useLocalStore from './modules/local'
+import useThemeStore from './modules/theme'
 import useUserStore from './modules/user'
 
-export { useCommonStore, useUserStore }
+export { useCommonStore, useLocalStore, useThemeStore, useUserStore }

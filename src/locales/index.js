@@ -5,6 +5,7 @@ import en from './en.json' // English
 const i18n = createI18n({
   legacy: false,
   locale: 'zh',
+  // globalInjection: true,
   messages: {
     zh,
     en

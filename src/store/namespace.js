@@ -1,1 +1,1 @@
-export const Names = { common: 'common', user: 'user' }
+export const Names = { common: 'common', local: 'local', theme: 'theme', user: 'user' }

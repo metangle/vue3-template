@@ -1,4 +1,12 @@
 {
+  "local": {
+    "en": "English",
+    "zh": "Chinese"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  },
   "nav": {
     "Home": "HOME",
     "About": "ABOUT"
