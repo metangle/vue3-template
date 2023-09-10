@@ -38,7 +38,7 @@ const handleRequest = () => {
 }
 
 onActivated(() => {
-  debugger // keepAlive: false 默认这里不会进来 但是子组件如果keepAlive true, 则这里会进来
+  debugger // keepAlive: false 默认这里不会进来 但是子路由如果keepAlive true, 则这里会进来
 })
 </script>
 

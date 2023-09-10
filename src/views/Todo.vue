@@ -16,7 +16,7 @@ onActivated(() => {
       <n-space vertical>
         <n-checkbox value="article" label="写一篇作文" />
         <n-checkbox value="cat" label="养一只猫" />
-        <n-checkbox value="man" label="帮助一位老人" />
+        <n-checkbox value="man" label="走一段路" />
       </n-space>
     </n-checkbox-group>
   </n-card>
