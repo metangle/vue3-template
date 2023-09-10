@@ -1,4 +1,4 @@
-<script setup name="site">
+<script setup name="index">
 import { computed } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { NButton, NSpace, NCard } from 'naive-ui'
@@ -29,9 +29,14 @@ const { changeTheme } = themeStore
         </n-space>
       </n-space>
     </n-card>
-
-    <router-view />
   </n-space>
+
+  <router-view v-slot="{ Component, route }">
+    <keep-alive>
+      <component v-if="route.meta.keepAlive" :is="Component" :key="route.name" />
+    </keep-alive>
+    <component v-if="!route.meta.keepAlive" :is="Component" :key="route.name" />
+  </router-view>
 </template>
 
 <style scoped lang="scss"></style>

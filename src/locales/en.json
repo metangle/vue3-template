@@ -1,7 +1,8 @@
 {
   "title": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "todo": "Todo"
   },
   "local": {
     "en": "English",

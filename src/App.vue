@@ -1,5 +1,6 @@
-<script setup>
+<script setup name="app">
 // import Site from './views/Site.vue'
+import { onActivated } from 'vue'
 import {
   NConfigProvider,
   NDialogProvider,
@@ -7,7 +8,8 @@ import {
   NNotificationProvider,
   NLayout,
   NScrollbar,
-  NEl
+  NEl,
+  NBackTop
 } from 'naive-ui'
 
 import { useLocalStore, useThemeStore } from '@/store'
@@ -18,6 +20,10 @@ const themeStore = useThemeStore()
 
 const currentLang = computed(() => localStore.currentLang)
 const currentTheme = computed(() => themeStore.currentTheme)
+
+onActivated(() => {
+  debugger
+})
 </script>
 
 <template>
@@ -33,7 +39,8 @@ const currentTheme = computed(() => themeStore.currentTheme)
           <n-layout>
             <n-el tag="main" style="height: 100vh">
               <n-scrollbar style="max-height: 100vh">
-                <router-view />
+                <router-view></router-view>
+                <n-back-top />
               </n-scrollbar>
             </n-el>
           </n-layout>

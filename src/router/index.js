@@ -15,20 +15,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: () => import('../views/Site.vue'),
+      component: () => import('../views/index.vue'),
       meta: {},
       children: [
         {
           path: '',
           name: 'home',
           component: () => import('../views/Home.vue'),
-          meta: {},
+          meta: {
+            keepAlive: false,
+            transition: false
+          },
           children: [
             {
               path: 'todo',
               name: 'todo',
               component: () => import('../views/Todo.vue'),
-              meta: {}
+              meta: {
+                keepAlive: true,
+                transition: 'router_animate'
+              }
             }
           ]
         },
@@ -36,7 +42,10 @@ const router = createRouter({
           path: 'about',
           name: 'about',
           component: () => import('../views/About.vue'),
-          meta: {}
+          meta: {
+            keepAlive: true,
+            transition: false
+          }
         }
       ]
     }

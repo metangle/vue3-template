@@ -20,3 +20,5 @@
 - [ ] page animation
 
 Notice: to inherit theme of naive-ui, use variables of naive-ui, prohibit to use Native HTML tags, use n-el tag ??
+
+只需要子路由router-view页面动画， 父级router-view不能有transition组件， 否则会连父级一起做动画

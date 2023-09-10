@@ -1,7 +1,8 @@
 {
   "title": {
     "home": "首页",
-    "about": "关于"
+    "about": "关于",
+    "todo": "待办"
   },
   "local": {
     "en": "英文",
