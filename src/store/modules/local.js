@@ -15,16 +15,16 @@ export default defineStore(Names.local, {
     currentLang() {
       return this.local === 'en'
         ? {
+            lang: 'en',
+            label: t('local.zh'),
             locale: enUS,
             dateLocal: dateEnUS,
-            lang: 'en',
-            label: t('local.zh')
           }
         : {
-            locale: zhCN,
-            dateLocal: dateZhCN,
             lang: 'zh',
-            label: t('local.en')
+            label: t('local.en'),
+            locale: zhCN,
+            dateLocal: dateZhCN
           }
     }
   },

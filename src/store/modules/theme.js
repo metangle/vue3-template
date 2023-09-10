@@ -15,11 +15,13 @@ export default defineStore(Names.theme, {
     currentTheme() {
       return this.theme === 'dark'
         ? {
-            label: t('theme.dark'),
+            theme: 'dark',
+            label: t('theme.light'),
             data: darkTheme
           }
         : {
-            label: t('theme.light'),
+            theme: 'light',
+            label: t('theme.dark'),
             data: lightTheme
           }
     }
