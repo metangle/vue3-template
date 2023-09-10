@@ -31,9 +31,11 @@ const currentTheme = computed(() => themeStore.currentTheme)
       <n-notification-provider>
         <n-dialog-provider>
           <n-layout>
-            <n-scrollbar style="max-height: 100vh">
-              <router-view />
-            </n-scrollbar>
+            <n-el tag="main" style="height: 100vh">
+              <n-scrollbar style="max-height: 100vh">
+                <router-view />
+              </n-scrollbar>
+            </n-el>
           </n-layout>
         </n-dialog-provider>
       </n-notification-provider>
