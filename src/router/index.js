@@ -21,13 +21,13 @@ const router = createRouter({
         {
           path: '',
           name: 'home',
-          component: () => import('../views/HomeView.vue'),
+          component: () => import('../views/Home.vue'),
           meta: {},
           children: [
             {
-              path: 'test',
-              name: 'test',
-              component: () => import('../views/Test.vue'),
+              path: 'todo',
+              name: 'todo',
+              component: () => import('../views/Todo.vue'),
               meta: {}
             }
           ]
@@ -35,7 +35,7 @@ const router = createRouter({
         {
           path: 'about',
           name: 'about',
-          component: () => import('../views/AboutView.vue'),
+          component: () => import('../views/About.vue'),
           meta: {}
         }
       ]

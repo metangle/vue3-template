@@ -1,5 +1,6 @@
 export default {
   mounted(el) {
-    el.focus()
+    const target = el.tagName === 'INPUT' ? el : el.querySelector('input')
+    target.focus()
   }
 }

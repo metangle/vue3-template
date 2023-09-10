@@ -6,6 +6,7 @@ const useCommonStore = defineStore(Names.common, {
     return {
       lang: 'en',
       theme: 'light',
+
       year: 2023,
       month: 5,
       day: 12
@@ -35,8 +36,8 @@ const useCommonStore = defineStore(Names.common, {
       storage: localStorage
     },
     {
-      paths: ['year'],
-      key: () => ['demo-year'],
+      paths: ['year', 'month', 'day'],
+      key: () => ['testDate'],
       storage: localStorage
     }
   ]
