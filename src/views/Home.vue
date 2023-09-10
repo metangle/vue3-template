@@ -15,8 +15,6 @@ const common = useCommonStore()
 const { userInfo, setUserInfo } = user
 const { setYear, setMonth, setDay } = common
 
-const isLogged = computed(() => user.isLogged)
-
 const year = computed(() => common.year)
 const month = computed(() => common.month)
 const day = computed(() => common.day)
