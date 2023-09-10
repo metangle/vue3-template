@@ -33,7 +33,7 @@ const handleRequest = () => {
     .then((res) => {
       console.log(res)
     })
-    .catch(e => {
+    .catch((e) => {
       message.warning(e.message)
     })
 }
