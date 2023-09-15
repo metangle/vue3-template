@@ -24,7 +24,7 @@ const router = createRouter({
           component: () => import('../views/Home.vue'),
           meta: {
             keepAlive: false,
-            transition: false
+            transition: ''
           },
           children: [
             {
@@ -44,7 +44,7 @@ const router = createRouter({
           component: () => import('../views/About.vue'),
           meta: {
             keepAlive: true,
-            transition: false
+            transition: ''
           }
         }
       ]

@@ -1,7 +1,8 @@
 <script setup name="home">
-import { ref, computed, onActivated } from 'vue'
+import { ref, computed, onMounted, onActivated } from 'vue'
 import { NButton, NInput, NSpace, NEl, NCard, useMessage } from 'naive-ui'
 import { get } from '@/api/request.js'
+import { watchDocumentScroll } from '@/util'
 
 import { RouterLink, RouterView } from 'vue-router'
 
@@ -40,6 +41,11 @@ const handleRequest = () => {
 
 onActivated(() => {
   debugger // keepAlive: false 默认这里不会进来 但是子路由如果keepAlive true, 则这里会进来
+})
+onMounted(() => {
+  watchDocumentScroll((direction) => {
+    console.log('direction--', direction)
+  }, true)
 })
 </script>
 

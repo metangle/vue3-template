@@ -8,7 +8,7 @@
 - [x] pinia
 - [x] axios
 - [x] naive-ui
-- [ ] history mode
+- [x] history mode
 - [x] multiple env(dev | prod)
 - [x] build config(debugger | console.log)
 - [x] code check and commit
@@ -17,7 +17,7 @@
 - [x] black | light theme
 - [ ] integrate search ai [spark ai]
 - [ ] keep-alive scroll to 0 ??
-- [ ] page animation
+- [x] page animation
 - [ ] 后台管理 - 国际化配置
 - [ ] 动态路由？？
 - [ ] 登录
