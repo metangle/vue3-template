@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="lottie">
 import { ref, onMounted } from 'vue'
 
 import lottie from 'lottie-web'

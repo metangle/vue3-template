@@ -17,7 +17,7 @@ export default defineConfig(({ mode, command, ssrBuild }) => {
     plugins: [
       vue(),
       vueSetupExtend(),
-      watchFile(directiveFileChangeConfig.baseDirUrl, directiveFileChangeConfig.handler),
+      // watchFile(directiveFileChangeConfig.baseDirUrl, directiveFileChangeConfig.handler),
       watchFile(storeFileChangeConfig.baseDirUrl, storeFileChangeConfig.handler),
     ],
     resolve: {

@@ -1,6 +1,12 @@
-import Lottie from './lottie/index.vue'
+import lottie from './lottie/index.vue'
+
+const components = {
+  lottie
+}
 export default {
   install(app) {
-    app.component('u-lottie', Lottie)
+    for (let key of Object.keys(components)) {
+      app.component(`u-${key}`, components[key])
+    }
   }
 }

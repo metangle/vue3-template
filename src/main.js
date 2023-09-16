@@ -15,6 +15,7 @@ const pinia = createPinia()
 const app = createApp(App)
 
 app.use(i18n)
+app.use(directives)
 app.use(components)
 pinia.use(piniaPluginPersistedState)
 app.use(pinia)
