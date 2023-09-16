@@ -3,7 +3,7 @@ import path from 'path'
 const { resolve } = path
 import format from 'prettier-eslint';
 
-const baseDirUrl = resolve(__dirname, '../src/directives')
+const baseDirUrl = resolve(__dirname, '../src/components')
 
 const handler = (path, stats) => {
     console.log('directive-watch files-', 'path-', path, 'stats', stats)
@@ -13,27 +13,29 @@ const handler = (path, stats) => {
         const importArr = []
         const exportObj = []
         files.forEach(file => {
-            if (file !== 'index.js' && file.endsWith('.js')) {
-                const str = file.replace('\.js', '')
-                importArr.push(`import ${str} from './${str}'`)
+            if (file !== 'index.js') {
+                console.log('file--', file)
+                // const str = file.replace('\.js', '')
+                const str = file.replace('', '')
+                importArr.push(`import ${str} from './${str}/index.vue'`)
                 exportObj.push(str)
             }
         })
 
         try {
             const data = await format({
-                text: importArr.join('\n') + '\n\n' + 'const directives = {\n' +exportObj.join(',\n') + '\n}\n' + `export default {
+                text: importArr.join('\n') + '\n\n' + 'const components = {\n' +exportObj.join(',\n') + '\n}\n' + `export default {
                     install(app) {
-                      for (let key of Object.keys(directives)) {
-                        app.directive(key, directives[key])
+                      for (let key of Object.keys(components)) {
+                        app.component(` + '`' + 'u-' + '${key}'+ '`' + `, components[key])
                       }
                     }
                   }`,
                 semi: false, 
             })
             
-            fs.writeFile(resolve(__dirname, '../src/directives/index.js'), data, err => {
-                if (!err) console.log('directive-write successfully')
+            fs.writeFile(resolve(__dirname, '../src/components/index.js'), data, err => {
+                if (!err) console.log('components-write successfully')
             })
         } catch(e) {
             console.log(e)

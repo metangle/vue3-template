@@ -6,6 +6,7 @@ import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 import watchFile from './plugins/watchFile'
 import directiveFileChangeConfig from './chore/directiveFileChangeConfig'
+import globalComponentsFileChangeConfig from './chore/globalComponentsFileChangeConfig'
 import storeFileChangeConfig from './chore/storeFileChangeConfig'
 
 // https://vitejs.dev/config/
@@ -17,7 +18,8 @@ export default defineConfig(({ mode, command, ssrBuild }) => {
     plugins: [
       vue(),
       vueSetupExtend(),
-      // watchFile(directiveFileChangeConfig.baseDirUrl, directiveFileChangeConfig.handler),
+      watchFile(directiveFileChangeConfig.baseDirUrl, directiveFileChangeConfig.handler),
+      watchFile(globalComponentsFileChangeConfig.baseDirUrl, globalComponentsFileChangeConfig.handler),
       watchFile(storeFileChangeConfig.baseDirUrl, storeFileChangeConfig.handler),
     ],
     resolve: {
