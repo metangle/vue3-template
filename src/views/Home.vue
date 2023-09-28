@@ -1,10 +1,11 @@
 <script setup name="home">
-import { ref, computed, onMounted, onActivated } from 'vue'
+import { ref, computed, onMounted, onActivated, getCurrentInstance } from 'vue'
 import { NButton, NInput, NSpace, NEl, NCard, useMessage } from 'naive-ui'
-import { get } from '@/api/request.js'
 import { watchDocumentScroll } from '@/util'
 
 import { RouterLink, RouterView } from 'vue-router'
+
+const { proxy } = getCurrentInstance()
 
 import { useUserStore, useCommonStore } from '../store'
 
@@ -30,17 +31,28 @@ const handleCommon = () => {
 }
 
 const handleRequest = () => {
-  get('/user', { id: 1 })
+  proxy
+    .$get(proxy.$api.KNOWLEDGE, { id: 1, page: 1, pageSize: 20 })
     .then((res) => {
       console.log(res)
     })
     .catch((e) => {
-      message.warning(e.message)
+      console.error(e)
+      message.warning(e)
+    })
+  proxy
+    .$post(proxy.$api.KNOWLEDGE, { title: '如何开发vue项目' })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((e) => {
+      console.error(e)
+      message.warning(e)
     })
 }
 
 onActivated(() => {
-  debugger // keepAlive: false 默认这里不会进来 但是子路由如果keepAlive true, 则这里会进来
+  // debugger // keepAlive: false 默认这里不会进来 但是子路由如果keepAlive true, 则这里会进来
 })
 onMounted(() => {
   watchDocumentScroll((direction) => {

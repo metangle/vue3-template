@@ -5,7 +5,7 @@ import { NCheckboxGroup, NCheckbox, NSpace, NEl, NCard } from 'naive-ui'
 const done = ref(['article'])
 
 onActivated(() => {
-  debugger // keepAlive: true 这里会进来
+  // debugger // keepAlive: true 这里会进来
 })
 </script>
 

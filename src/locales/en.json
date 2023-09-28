@@ -2,7 +2,8 @@
   "title": {
     "home": "Home",
     "about": "About",
-    "todo": "Todo"
+    "todo": "Todo",
+    "socket": "Socket"
   },
   "local": {
     "en": "English",

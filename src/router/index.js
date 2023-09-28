@@ -46,6 +46,15 @@ const router = createRouter({
             keepAlive: true,
             transition: ''
           }
+        },
+        {
+          path: 'socket',
+          name: 'socket',
+          component: () => import('../views/Socket.vue'),
+          meta: {
+            keepAlive: true,
+            transition: ''
+          }
         }
       ]
     }
@@ -81,7 +90,6 @@ router.afterEach(function (to, from) {
 
     nextTick(() => {
       // if (to.name !== 'home') {
-      //   debugger
       // } else {
       //   // defined in index.html
       //   // window.deriveTitleFromLocale(useLocaleName().value)

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { Names } from '../namespace'
 import { zhCN, enUS, dateZhCN, dateEnUS } from 'naive-ui'
 import i18n from '@/locales'
+import { useTitle } from '@vueuse/core'
 
 const { locale, t } = i18n.global
 
@@ -36,7 +37,7 @@ export default defineStore(Names.local, {
       this.currentRouteName = value
     },
     setPageTitle(value) {
-      document.title = value
+      useTitle(value)
     },
     changeLanguage() {
       try {

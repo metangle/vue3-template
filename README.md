@@ -18,6 +18,8 @@
 - [ ] integrate search ai [spark ai]
 - [ ] keep-alive scroll to 0 ??
 - [x] page animation
+- [x] vueuse
+- [x] lottie animation
 - [ ] 后台管理 - 国际化配置
 - [ ] 动态路由？？
 - [ ] 登录

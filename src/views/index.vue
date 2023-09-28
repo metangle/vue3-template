@@ -26,6 +26,7 @@ const { changeTheme } = themeStore
         <n-space>
           <router-link to="/">{{ $t(`title.home`) }}</router-link>
           <router-link to="/about">{{ $t(`title.about`) }}</router-link>
+          <router-link to="/socket">{{ $t(`title.socket`) }}</router-link>
         </n-space>
       </n-space>
     </n-card>

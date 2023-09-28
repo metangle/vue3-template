@@ -1,3 +1,24 @@
+export const replaceApiUrlParams = (url, params) => {
+  // 使用正则表达式匹配占位符，例如"{id}"
+  const regex = /{(\w+)}/g
+  const leftParams = {}
+  const reqUrl = url.replace(regex, (match, attr) => {
+    // debugger // FIXME: 替换错误
+    if (attr in params) {
+      return params[attr]
+    }
+
+    leftParams[attr] = params[attr]
+    // debugger
+    return match
+  })
+
+  return {
+    reqUrl,
+    leftParams
+  }
+}
+
 /**
  * body wrapper scroll to distance
  * @param {*} distance

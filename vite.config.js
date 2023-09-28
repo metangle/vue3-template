@@ -33,6 +33,7 @@ export default defineConfig(({ mode, command, ssrBuild }) => {
         [env.VITE_APP_BASE_API]: {
           target: env.VITE_SERVE,
           changeOrigin: true,
+          // ws: true,
           rewrite: (path) => path.replace(RegExp(`^${env.VITE_APP_BASE_API}`), '')
         }
       }

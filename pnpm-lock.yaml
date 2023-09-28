@@ -10,6 +10,9 @@ dependencies:
   axios:
     specifier: ^1.5.0
     version: 1.5.0
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   lottie-web:
     specifier: ^5.12.2
     version: 5.12.2
@@ -1536,7 +1539,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /loglevel-colored-level-prefix@1.0.0:
     resolution: {integrity: sha512-u45Wcxxc+SdAlh4yeF/uKlC1SPUPCy0gullSNKXod5I4bmifzk+Q4lSLExNEVn19tGaJipbZ4V4jbFn79/6mVA==}

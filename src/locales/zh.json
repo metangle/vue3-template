@@ -2,7 +2,8 @@
   "title": {
     "home": "首页",
     "about": "关于",
-    "todo": "待办"
+    "todo": "待办",
+    "socket": "即时通讯"
   },
   "local": {
     "en": "英文",

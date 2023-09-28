@@ -22,7 +22,7 @@ const currentLang = computed(() => localStore.currentLang)
 const currentTheme = computed(() => themeStore.currentTheme)
 
 onActivated(() => {
-  debugger
+  // debugger
 })
 </script>
 
